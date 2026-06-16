@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savvy VIP Checkbox Variants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        /* Custom Checkbox Styling */
+        .custom-checkbox {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.75em;
+            height: 1.75em;
+            border: 2px solid #555;
+            border-radius: 0.25em;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .custom-checkbox::before {
+            content: "";
+            width: 1em;
+            height: 1em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em white;
+            background-color: black;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+        .custom-checkbox:checked {
+            background-color: #000;
+            border-color: #000;
+        }
+
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-10 pb-24">
+
+    <div class="max-w-3xl mx-auto space-y-12">
+        <!-- Header Introduction -->
+        <div class="text-center space-y-3 mb-10">
+            <h1 class="text-3xl font-extrabold text-gray-900">VIP Membership Popup Variant Testing</h1>
+            <p class="text-gray-600">Goal: Increase membership take rate on checkout pages from 10% to 16%. Here are 4
+                variants to test against the
+                control.</p>
+        </div>
+
+        <!-- VARIANT 1: The "Value First" (Pre-Expanded) Layout -->
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-blue-500 relative">
+            <span
+                class="absolute -top-3 left-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full tracking-wide uppercase">Variant
+                1: Always Expanded</span>
+            <p class="text-sm text-gray-500 mb-4">Removes the click friction entirely. Shows the massive value
+                proposition immediately so users don't have to guess what they get.</p>
+
+            <!-- Component Start -->
+            <div
+                class="bg-[#eafbed] border-[3px] border-[#c8a153] rounded-xl p-4 md:p-5 shadow-sm max-w-[450px] mx-auto">
+                <div class="flex items-center justify-between gap-3">
+                    <img src="savvy-vip.png.webp"
+                        onerror="this.onerror=null; this.src='https://placehold.co/100x100/bfa15f/ffffff?text=VIP_ICON';"
+                        alt="VIP Badge" class="w-16 md:w-20 object-contain drop-shadow-md">
+                    <div class="flex-1">
+                        <h2 class="text-lg md:text-xl font-extrabold text-black leading-tight">YES, UNLOCK MY SAVVY VIP
+                            MEMBERSHIP <br /><span class="text-green-700 text-sm md:text-base">+ FREE DROP</span> <span
+                                class="text-green-400 font-bold tracking-tighter">>>></span></h2>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="custom-checkbox">
+                    </div>
+                </div>
+
+                <hr class="border-[#c8a153] opacity-30 my-4">
+
+                <div class="space-y-3 pl-2">
+                    <h3 class="font-bold text-base md:text-lg text-black">Savvy VIP Membership Includes:</h3>
+                    <ul class="space-y-2 text-sm md:text-base font-semibold text-gray-900">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-red-600">FREE premium product — choose it now</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>$30 Monthly Store Credit (use on anything)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Priority shipping + full order protection</span>
+                        </li>
+                    </ul>
+
+                    <!-- V1: Collapsed Extra Benefits -->
+                    <div class="mt-1">
+                        <button id="v1-more-btn" onclick="toggleExtra('v1-extra-list', 'v1-more-btn')"
+                            class="bg-[#333] hover:bg-black text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md flex items-center gap-2 transition-colors focus:outline-none">
+                            <span>+4 more benefits</span><span
+                                class="text-xs transition-transform duration-200 inline-block">▼</span>
+                        </button>
+                        <ul id="v1-extra-list"
+                            class="hidden space-y-2 text-sm md:text-base font-semibold text-gray-900 mt-2">
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Surprise drops year-round ($50+ value each)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Exclusive Member Pricing + Ongoing VIP Rewards</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Lifetime warranty on every item you own</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Exclusive Savvy App access & member pricing</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4 text-sm font-semibold pt-2 border-t border-black/10">
+                        Only $29.99/month - <span class="text-red-600">cancel anytime.</span><br>
+                        Just tick the box to join instantly.
+                    </div>
+                </div>
+            </div>
+            <!-- Component End -->
+        </div>
+
+        <!-- VARIANT 2: "Urgency & Loss Aversion" -->
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-purple-500 relative">
+            <span
+                class="absolute -top-3 left-4 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full tracking-wide uppercase">Variant
+                2: Urgency & Loss Aversion</span>
+            <p class="text-sm text-gray-500 mb-4">Updates the micro-copy to make leaving it blank feel like missing out.
+                Emphasizes the $50+ value in the main headline and adds a sub-label to the checkbox.</p>
+
+            <!-- Component Start -->
+            <div
+                class="bg-[#eafbed] border-[3px] border-[#c8a153] rounded-xl p-4 md:p-5 shadow-sm max-w-[450px] mx-auto">
+                <div class="flex items-start justify-between gap-3 relative pb-4">
+                    <img src="savvy-vip.png.webp"
+                        onerror="this.onerror=null; this.src='https://placehold.co/100x100/c2a569/ffffff?text=VIP_ICON';"
+                        alt="VIP Badge" class="w-16 md:w-20 object-contain drop-shadow-md">
+                    <div class="flex-1 pt-0.5">
+                        <h2 class="text-[19px] md:text-xl font-extrabold text-black leading-tight uppercase">
+                            CLAIM MY SAVVY VIP<br>MEMBERSHIP
+                            <br /><span
+                                class="text-[#cc3333] text-sm md:text-[15px] bg-[#f9e5e5] px-2 py-0.5 rounded inline-block mt-2 font-bold">(GET
+                                $50+ REWARD TODAY)</span>
+                        </h2>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 pt-2 pr-1">
+                        <input type="checkbox" class="custom-checkbox">
+                        <span
+                            class="text-[10px] font-extrabold uppercase tracking-wide text-[#3b8250] whitespace-nowrap">Get
+                            Now!</span>
+                    </div>
+                </div>
+
+                <hr class="border-[#c8a153] opacity-30 mt-0 mb-4 relative z-0">
+
+                <div class="space-y-3 pl-1">
+                    <h3 class="font-bold text-[17px] md:text-lg text-black">Unlock Immediate Benefits:</h3>
+                    <ul class="space-y-3 text-[15px] md:text-base font-bold text-gray-900">
+                        <li class="flex items-start gap-2.5">
+                            <svg class="w-[22px] h-[22px] text-[#c8a153] flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span><span class="text-[#cc3333]">FREE premium product — choose it now</span></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <svg class="w-[22px] h-[22px] text-[#c8a153] flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span><span class="text-[#3b8250]">$30 Monthly Store Credit</span> instantly active</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <svg class="w-[22px] h-[22px] text-[#c8a153] flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Surprise drops year-round ($50+ value each)</span>
+                        </li>
+                    </ul>
+
+                    <!-- V2: Collapsed Extra Benefits -->
+                    <div class="mt-2">
+                        <button id="v2-more-btn" onclick="toggleExtra('v2-extra-list', 'v2-more-btn')"
+                            class="bg-[#333] hover:bg-black text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md flex items-center gap-2 transition-colors focus:outline-none">
+                            <span>+4 more benefits</span><span
+                                class="text-xs transition-transform duration-200 inline-block">▼</span>
+                        </button>
+                        <ul id="v2-extra-list"
+                            class="hidden space-y-3 text-[15px] md:text-base font-bold text-gray-900 mt-3">
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-[22px] h-[22px] text-[#c8a153] flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Exclusive Member Pricing + Ongoing VIP Rewards</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-[22px] h-[22px] text-[#c8a153] flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Priority shipping + full order protection</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-[22px] h-[22px] text-[#c8a153] flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Lifetime warranty on every item you own</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-[22px] h-[22px] text-[#c8a153] flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Exclusive Savvy App access & member pricing</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-5 text-sm font-semibold pt-0">
+                        <hr class="border-[#c8a153] opacity-30 mb-4">
+                        <div
+                            class="flex items-center justify-center gap-2 bg-[#fef9eb] py-2.5 px-3 rounded text-[13px] md:text-[14px] mb-4 text-[#8a6828] border border-[#e8dcb8] font-bold shadow-sm mx-0.5">
+                            <span class="text-[#8a6828] text-sm">★</span>
+                            Join 3600+ active Savvy VIP members
+                        </div>
+                        <div class="text-[15px] pl-1 font-bold">
+                            Only $29.99/month - <span class="text-[#cc3333]">cancel anytime.</span>
+                            Just tick the box to join instantly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Component End -->
+        </div>
+
+        <!-- VARIANT 3: Recommended Hybrid (Value-Visible Collapsed State) -->
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-orange-500 relative">
+            <span
+                class="absolute -top-3 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full tracking-wide uppercase">Variant
+                3: Recommended Hybrid</span>
+            <p class="text-sm text-gray-500 mb-4">Shows the strongest value, price, and cancellation terms before
+                expansion while keeping the full benefits list available behind a clear text control.</p>
+
+            <!-- Component Start -->
+            <div
+                class="bg-[#eafbed] border-[3px] border-[#c8a153] rounded-xl shadow-sm max-w-[450px] mx-auto overflow-hidden transition-all duration-300 has-[:checked]:border-[#28a745] has-[:checked]:shadow-lg">
+                <!-- Top Main Bar -->
+                <label for="vip-hybrid-checkbox"
+                    class="p-4 md:p-5 flex items-start justify-between gap-3 relative pb-4 cursor-pointer">
+                    <img src="savvy-vip.png.webp"
+                        onerror="this.onerror=null; this.src='https://placehold.co/100x100/bfa15f/ffffff?text=VIP-ICON';"
+                        alt="VIP Badge" class="w-16 md:w-20 object-contain drop-shadow-md">
+                    <div class="flex-1 min-w-0">
+                        <h2 class="text-[19px] md:text-xl font-extrabold text-black leading-tight uppercase">
+                            Add Savvy VIP + get a <span class="text-[#cc3333]">FREE premium product</span>
+                        </h2>
+                        <p class="mt-2 text-[13px] md:text-sm font-bold text-[#3b8250] leading-snug">
+                            Includes $30 monthly store credit.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 pt-1">
+                        <input id="vip-hybrid-checkbox" type="checkbox" class="custom-checkbox">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wide text-[#3b8250]">Add VIP</span>
+                    </div>
+                </label>
+
+                <!-- The Interactive Separator / CTA Pill -->
+                <div class="relative w-full flex justify-center z-10 h-8">
+                    <div class="absolute w-[90%] border-t border-gray-300 top-4"></div>
+                    <button type="button" id="toggle-variant-3" onclick="toggleDetails(event)"
+                        class="relative bg-[#333] hover:bg-black text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md flex items-center gap-2 transition-colors border-2 border-[#eafbed]">
+                        <span id="v3-text">View 4 more benefits</span>
+                        <span id="v3-arrow" class="transition-transform duration-300 transform">▼</span>
+                    </button>
+                </div>
+
+                <!-- Benefits Section -->
+                <div class="p-4 md:p-5 pt-3 bg-gradient-to-b from-[#eafbed] to-white/50">
+                    <div class="space-y-3 pl-2">
+                        <h3 class="font-bold text-base md:text-lg text-black">Savvy VIP Membership Includes:</h3>
+                        <ul class="space-y-2 text-[14px] md:text-base font-semibold text-gray-900">
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="text-[#cc3333]">FREE premium product — choose it now</span></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>$30 Monthly Store Credit (use on anything)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Member pricing + priority order protection</span>
+                            </li>
+                        </ul>
+
+                        <ul id="v3-details"
+                            class="hidden space-y-2 text-[14px] md:text-base font-semibold text-gray-900">
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Surprise drops year-round ($50+ value each)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Exclusive Member Pricing + Ongoing VIP Rewards</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Priority shipping + full order protection</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Lifetime warranty on every item you own</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Exclusive Savvy App access & member pricing</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 text-[15px] font-bold pt-3 border-t border-black/10">
+                            Only $29.99/month - <span class="text-[#cc3333]">cancel anytime.</span><br>
+                            Just tick the box to join instantly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Component End -->
+        </div>
+
+        <!-- VARIANT 4: Product Protection Angle -->
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-emerald-600 relative">
+            <span
+                class="absolute -top-3 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full tracking-wide uppercase">Variant
+                4: Product Protection</span>
+            <p class="text-sm text-gray-500 mb-4">Connects VIP to the customer's current purchase: warranty, shipping,
+                protection, and confidence for the hero product they are about to buy.</p>
+
+            <!-- Component Start -->
+            <div
+                class="bg-[#eafbed] border-[3px] border-[#c8a153] rounded-xl shadow-sm max-w-[450px] mx-auto overflow-hidden transition-all duration-300 has-[:checked]:border-[#28a745] has-[:checked]:shadow-lg">
+                <label for="vip-protection-checkbox"
+                    class="p-4 md:p-5 flex items-start justify-between gap-3 cursor-pointer">
+                    <img src="savvy-vip.png.webp"
+                        onerror="this.onerror=null; this.src='https://placehold.co/100x100/bfa15f/ffffff?text=VIP_ICON';"
+                        alt="VIP Badge" class="w-16 md:w-20 object-contain drop-shadow-md">
+                    <div class="flex-1 min-w-0">
+                        <h2 class="text-[19px] md:text-xl font-extrabold text-black leading-tight uppercase">
+                            Protect today's order with <span class="text-[#3b8250]">Savvy VIP</span>
+                        </h2>
+                        <p class="mt-2 text-[13px] md:text-sm font-bold text-[#cc3333] leading-snug">
+                            Lifetime warranty + priority shipping + FREE premium product
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 pt-1">
+                        <input id="vip-protection-checkbox" type="checkbox" class="custom-checkbox">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wide text-[#3b8250]">Add VIP</span>
+                    </div>
+                </label>
+
+                <div class="relative w-full flex justify-center z-10 h-8">
+                    <div class="absolute w-[90%] border-t border-gray-300 top-4"></div>
+                    <button type="button" id="toggle-variant-4" onclick="toggleProtectionDetails(event)"
+                        class="relative bg-[#333] hover:bg-black text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md flex items-center gap-2 transition-colors border-2 border-[#eafbed]">
+                        <span id="v4-text">View 4 more benefits</span>
+                        <span id="v4-arrow" class="transition-transform duration-300 transform">▼</span>
+                    </button>
+                </div>
+
+                <div class="space-y-3 p-4 md:p-5 pt-3 pl-6 md:pl-7 bg-gradient-to-b from-[#eafbed] to-white/50">
+                    <h3 class="font-bold text-base md:text-lg text-black">Savvy VIP protects your purchase with:</h3>
+                    <ul class="space-y-2 text-[14px] md:text-base font-semibold text-gray-900">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span><span class="text-[#cc3333]">Lifetime warranty</span> on every item you own</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Priority shipping + full order protection</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span><span class="text-[#cc3333]">FREE premium product</span> — choose it now</span>
+                        </li>
+                    </ul>
+
+                    <ul id="v4-details" class="hidden space-y-2 text-[14px] md:text-base font-semibold text-gray-900">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>$30 Monthly Store Credit (use on anything)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Exclusive Savvy App access + member pricing</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Surprise drops year-round ($50+ value each)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Exclusive member pricing + VIP rewards</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-4 text-[15px] font-bold pt-3 border-t border-black/10">
+                        Only $29.99/month - <span class="text-[#cc3333]">cancel anytime.</span><br>
+                        Just tick the box to add VIP protection instantly.
+                    </div>
+                </div>
+            </div>
+            <!-- Component End -->
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(event) {
+            event.preventDefault();
+            const detailsDiv = document.getElementById('v3-details');
+            const arrowSpan = document.getElementById('v3-arrow');
+            const textSpan = document.getElementById('v3-text');
+
+            if (detailsDiv.classList.contains('hidden')) {
+                // Expanding
+                detailsDiv.classList.remove('hidden');
+                arrowSpan.style.transform = 'rotate(180deg)';
+                textSpan.innerText = 'Hide benefits';
+            } else {
+                // Collapsing
+                detailsDiv.classList.add('hidden');
+                arrowSpan.style.transform = 'rotate(0deg)';
+                textSpan.innerText = 'View 4 more benefits';
+            }
+        }
+
+        function toggleProtectionDetails(event) {
+            event.preventDefault();
+            const detailsDiv = document.getElementById('v4-details');
+            const arrowSpan = document.getElementById('v4-arrow');
+            const textSpan = document.getElementById('v4-text');
+
+            if (detailsDiv.classList.contains('hidden')) {
+                // Expanding
+                detailsDiv.classList.remove('hidden');
+                arrowSpan.style.transform = 'rotate(180deg)';
+                textSpan.innerText = 'Hide benefits';
+            } else {
+                // Collapsing
+                detailsDiv.classList.add('hidden');
+                arrowSpan.style.transform = 'rotate(0deg)';
+                textSpan.innerText = 'View 4 more benefits';
+            }
+        }
+
+        function toggleExtra(listId, btnId) {
+            const list = document.getElementById(listId);
+            const btn = document.getElementById(btnId);
+
+            if (list.classList.contains('hidden')) {
+                // Expanding
+                list.classList.remove('hidden');
+                btn.innerHTML = '<span>Hide extra benefits</span><span class="text-xs transition-transform duration-200 inline-block transform rotate-180">▲</span>';
+            } else {
+                // Collapsing
+                list.classList.add('hidden');
+                btn.innerHTML = '<span>+4 more benefits</span><span class="text-xs transition-transform duration-200 inline-block">▼</span>';
+            }
+        }
+    </script>
+</body>
+
+</html>
